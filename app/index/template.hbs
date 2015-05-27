@@ -1,0 +1,38 @@
+<div class="form-group">
+  <div class="btn-group" role="group" aria-label="...">
+    {{#each model.types as |type|}}
+    {{tweet-type submit=(action "setTweetType" type) value=type}}
+    {{/each}}
+  </div>
+</div>
+<div class="form-group">
+  {{tweet-input value=tweetinput}}
+</div>
+<div class="form-group">
+  <div class="form-group">
+    <label class="col-md-2 control-label">Twitter User</label>
+    <div class="col-md-4">
+      {{twitter-user value=twitteruser}}
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-1 control-label">Link</label>
+    <div class="col-md-5">
+      {{tweet-link value=tweetlink}}
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-3 control-label">Hashtags</label>
+  <div class="col-md-9">
+    {{#each model.hashtags as |hashtag|}}
+    {{tweet-hashtags value=hashtag submit=(action "addHashtag" hashtag)}}
+    {{/each}}
+  </div>
+</div>
+<div class="form-group">
+  {{tweet-input value=tweetpreview}}
+</div>
+<div class="form-group">
+  <button type="button" {{action 'saveTweet'}} class="btn btn-primary">Save</button>
+</div>
