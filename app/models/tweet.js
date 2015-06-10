@@ -5,6 +5,5 @@ export default DS.Model.extend({
   twitteruser: DS.attr('string'),
   tweetinput: DS.attr('string'),
   tweetlink: DS.attr('string'),
-  emberjsCheckBox: DS.attr('boolean', {defaultValue: false}),
-  javascriptCheckBox: DS.attr('boolean', {defaultValue: false})
+  hashtags: DS.attr('string')
 });

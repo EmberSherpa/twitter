@@ -25,7 +25,7 @@
 <div class="form-group">
   <label class="col-md-3 control-label">Hashtags</label>
   <div class="col-md-9">
-    {{#each model.hashtags as |hashtag|}}
+    {{#each hashtagCheckbox as |hashtag|}}
     {{tweet-hashtags value=hashtag submit=(action "addHashtag" hashtag)}}
     {{/each}}
   </div>
@@ -36,3 +36,5 @@
 <div class="form-group">
   <button type="button" {{action 'saveTweet'}} class="btn btn-primary">Save</button>
 </div>
+
+{{proxiedCheckBoxes}}

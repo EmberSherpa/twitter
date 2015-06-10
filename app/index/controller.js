@@ -5,10 +5,17 @@ export default Ember.Controller.extend({
   twitteruser: '',
   tweetinput: '',
   tweetlink: '',
-  emberjsCheckBox: true,
-  javascriptCheckBox: false,
-  tweetpreview: Ember.computed('tweettype,tweetinput,tweethashtags,tweetlink,twitteruser', function(){
-    return this.get('tweettype')+': '+this.get('tweetinput')+' '+this.get('tweetlink')+' '+this.get('twitteruser');
+  hashtagCheckbox: Ember.computed.map('model.hashtags', function(hashtag, index){
+    return Ember.ObjectProxy.create({
+      content: hashtag,
+      checked: true
+    });
+  }),
+  proxiedCheckBoxes: Ember.computed.mapBy('hashtagCheckbox', 'content'),
+  tweetpreview: Ember.computed('proxiedCheckBoxes,tweettype,tweetinput,tweethashtags,tweetlink,twitteruser', function(){
+    return this.get('tweettype')+': '+this.get('tweetinput')
+    +' '+this.get('tweetlink')+' '+this.get('twitteruser')
+    +' '+this.get('proxiedCheckBoxes');
   }),
 
   actions:{
@@ -20,7 +27,8 @@ export default Ember.Controller.extend({
         tweettype: this.get('tweettype'),
         twitteruser: this.get('twitteruser'),
         tweetinput: this.get('tweetinput'),
-        tweetlink: this.get('tweetlink')
+        tweetlink: this.get('tweetlink'),
+        hashtags: this.get('proxiedCheckBoxes')
       });
       newTweet.save();
       this.setProperties({
