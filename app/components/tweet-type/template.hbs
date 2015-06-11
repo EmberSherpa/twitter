@@ -1,1 +1,3 @@
-<button {{action submit type}} class="btn btn-primary">{{value}}</button>
+{{#each categories as |category|}}
+<button {{action "submit" category}} class="btn btn-primary">{{category}}</button>
+{{/each}}
