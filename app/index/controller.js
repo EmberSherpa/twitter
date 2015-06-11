@@ -1,41 +1,50 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  tweettype: '',
-  twitteruser: '',
-  tweetinput: '',
-  tweetlink: '',
-  hashtagCheckbox: Ember.computed.map('model.hashtags', function(hashtag, index){
+  category: '',
+  user: '',
+  tweetText: '',
+  url: '',
+
+  checkboxes: Ember.computed.map('model.hashtags', function(hashtag){
     return Ember.ObjectProxy.create({
       content: hashtag,
-      checked: true
+      checked: false
     });
   }),
-  proxiedCheckBoxes: Ember.computed.mapBy('hashtagCheckbox', 'content'),
-  tweetpreview: Ember.computed('proxiedCheckBoxes,tweettype,tweetinput,tweethashtags,tweetlink,twitteruser', function(){
-    return this.get('tweettype')+': '+this.get('tweetinput')
-    +' '+this.get('tweetlink')+' '+this.get('twitteruser')
-    +' '+this.get('proxiedCheckBoxes');
+
+  proxiedCheckBoxes: Ember.computed.filterBy('checkboxes', 'checked', true),
+
+  hashtags: Ember.computed.mapBy('proxiedCheckBoxes', 'content'),
+
+  preview: Ember.computed('category,tweetText,url,user,hashtags', function(){
+    let category = this.get('category');
+    let tweetText = this.get('tweetText');
+    let url = this.get('url');
+    let user = this.get('user');
+    let hashtags = this.get('hashtags');
+
+    return category+': '+tweetText+' '+url+' '+user+' '+hashtags;
   }),
 
   actions:{
-    setTweetType(type) {
-      this.set('tweettype', type);
+    setTweetCategory(category) {
+      this.set('category', category);
     },
     saveTweet(){
       var newTweet = this.store.createRecord('tweet', {
-        tweettype: this.get('tweettype'),
-        twitteruser: this.get('twitteruser'),
-        tweetinput: this.get('tweetinput'),
-        tweetlink: this.get('tweetlink'),
-        hashtags: this.get('proxiedCheckBoxes')
+        category: this.get('category'),
+        user: this.get('user'),
+        tweetText: this.get('tweetText'),
+        url: this.get('url'),
+        hashtags: this.get('hashtags')
       });
       newTweet.save();
       this.setProperties({
-        tweettype: '',
-        twitteruser: '',
-        tweetinput: '',
-        tweetlink: ''
+        category: '',
+        user: '',
+        tweetText: '',
+        url: ''
       });
     }
   }
