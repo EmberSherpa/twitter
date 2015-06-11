@@ -1,40 +1,36 @@
 <div class="form-group">
   <div class="btn-group" role="group" aria-label="...">
-    {{#each model.types as |type|}}
-    {{tweet-type submit=(action "setTweetType" type) value=type}}
-    {{/each}}
+    {{tweet-type action="setTweetCategory" categories=model.categories}}
   </div>
 </div>
 <div class="form-group">
-  {{tweet-input value=tweetinput}}
+  {{tweet-input value=tweetText}}
 </div>
 <div class="form-group">
   <div class="form-group">
     <label class="col-md-2 control-label">Twitter User</label>
     <div class="col-md-4">
-      {{twitter-user value=twitteruser}}
+      {{twitter-user value=user}}
     </div>
   </div>
   <div class="form-group">
     <label class="col-md-1 control-label">Link</label>
     <div class="col-md-5">
-      {{tweet-link value=tweetlink}}
+      {{tweet-link value=url}}
     </div>
   </div>
 </div>
 <div class="form-group">
   <label class="col-md-3 control-label">Hashtags</label>
   <div class="col-md-9">
-    {{#each hashtagCheckbox as |hashtag|}}
-    {{tweet-hashtags value=hashtag submit=(action "addHashtag" hashtag)}}
+    {{#each checkboxes as |hashtag|}}
+    {{tweet-hashtags hashtag=hashtag.content checked=hashtag.checked}}
     {{/each}}
   </div>
 </div>
 <div class="form-group">
-  {{tweet-input value=tweetpreview}}
+  {{tweet-input value=preview}}
 </div>
 <div class="form-group">
   <button type="button" {{action 'saveTweet'}} class="btn btn-primary">Save</button>
 </div>
-
-{{proxiedCheckBoxes}}
