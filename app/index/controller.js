@@ -13,18 +13,23 @@ export default Ember.Controller.extend({
     });
   }),
 
-  proxiedCheckBoxes: Ember.computed.filterBy('checkboxes', 'checked', true),
+  selectedHashtags: Ember.computed.filterBy('checkboxes', 'checked', true),
+  hashtags: Ember.computed.mapBy('selectedHashtags', 'content'),
 
-  hashtags: Ember.computed.mapBy('proxiedCheckBoxes', 'content'),
+  preview: Ember.computed(
+    'category',
+    'tweetText',
+    'url',
+    'user',
+    'hashtags.[]', function(){
+      let category = this.get('category');
+      let tweetText = this.get('tweetText');
+      let url = this.get('url');
+      let user = this.get('user');
+      let hashtags = this.get('hashtags').join(' ');
 
-  preview: Ember.computed('category,tweetText,url,user,hashtags', function(){
-    let category = this.get('category');
-    let tweetText = this.get('tweetText');
-    let url = this.get('url');
-    let user = this.get('user');
-    let hashtags = this.get('hashtags');
-
-    return category+': '+tweetText+' '+url+' '+user+' '+hashtags;
+      // category+': '+tweetText+' '+url+' '+user+' '+hashtags
+      return `${category}: ${tweetText} ${url} ${user} ${hashtags}`;
   }),
 
   actions:{
