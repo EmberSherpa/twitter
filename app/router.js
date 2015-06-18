@@ -6,7 +6,8 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('tweet-list');
+  this.route('list', { path: '/' });
+  this.route('add');
 });
 
 export default Router;
