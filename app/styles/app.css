@@ -2,3 +2,15 @@ body {
   min-height: 2000px;
   padding-top: 70px;
 }
+
+.tweet-list {
+  height: 100px;
+}
+
+.tweet {
+  padding-top: 50px;
+  border-radius: 25px;
+  background: #F0F0F0;
+  padding: 20px;
+  height: 80px;
+}
