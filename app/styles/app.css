@@ -3,14 +3,10 @@ body {
   padding-top: 70px;
 }
 
-.tweet-list {
-  height: 100px;
-}
-
 .tweet {
-  padding-top: 50px;
   border-radius: 25px;
   background: #F0F0F0;
   padding: 20px;
+  margin-bottom: 20px;
   height: 80px;
 }
