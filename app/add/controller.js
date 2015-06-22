@@ -28,7 +28,6 @@ export default Ember.Controller.extend({
       let user = this.get('user');
       let hashtags = this.get('hashtags').join(' ');
 
-      // category+': '+tweetText+' '+url+' '+user+' '+hashtags
       return `${category}: ${tweetText} ${url} ${user} ${hashtags}`;
   }),
 

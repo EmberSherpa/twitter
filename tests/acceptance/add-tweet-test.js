@@ -14,13 +14,13 @@ module('Acceptance | add tweet', {
   }
 });
 
-test('visiting /add and adding a tweet', function(assert) {
+test('visiting /add and add a tweet', function(assert) {
   visit('/add');
   click('.btn.btn-primary.Post');
   fillIn('.form-control.textarea', 'This is a test tweet');
   fillIn('.form-control.user', '@zinyando');
   fillIn('.form-control.url', 'http://localhost:4200/');
-
+  click('.btn.btn-primary.submit');
 
   andThen(function() {
     assert.equal(currentURL(), '/add');
