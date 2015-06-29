@@ -6,6 +6,9 @@
 <div class="form-group">
   {{tweet-input value=tweetText}}
 </div>
+
+<hr>
+
 <div class="form-group">
   <div class="form-group">
     <label class="col-md-2 control-label">Twitter User</label>
@@ -20,6 +23,9 @@
     </div>
   </div>
 </div>
+
+<hr>
+
 <div class="form-group">
   <label class="col-md-3 control-label">Hashtags</label>
   <div class="col-md-9">
@@ -32,5 +38,5 @@
   {{tweet-input value=preview}}
 </div>
 <div class="form-group">
-  <button type="button" {{action 'saveTweet'}} class="btn btn-primary">Save</button>
+  <button type="button" {{action 'saveTweet'}} class="btn btn-primary submit">Save</button>
 </div>
