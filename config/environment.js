@@ -4,7 +4,6 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'twitter',
     environment: environment,
-    contentSecurityPolicy: { 'connect-src': "'self' wss://*.firebaseio.com" },
     firebase: 'https://torrid-inferno-7507.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
@@ -14,12 +13,12 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
-
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
     contentSecurityPolicy: {
+      'connect-src': "'self' wss://*.firebaseio.com",
       'default-src': "'none'",
       'script-src': "'self' 'unsafe-inline' 'unsafe-eval'",
       'font-src': "'self'",
@@ -49,6 +48,8 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+
+    ENV.disableFirebase = true;
   }
 
   if (environment === 'production') {
