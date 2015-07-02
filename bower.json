@@ -20,7 +20,8 @@
     "materialize": "~0.96.1"
   },
   "resolutions": {
-    "ember": "beta"
+    "ember": "beta",
+    "jquery": "^1.11.1"
   },
   "devDependencies": {
     "bootstrap": "~3.3.4"
