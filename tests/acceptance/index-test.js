@@ -31,6 +31,10 @@ test('visiting /', function(assert) {
   visit('/');
   andThen(function() {
     assert.equal(currentURL(), '/');
+    // APPROVE button visible
+    // DELETE button visible
+    // TWEET Text
     assert.equal($('.tweet').length, 3, "Three tweets are displayed");
   });
+  return pauseTest();
 });
