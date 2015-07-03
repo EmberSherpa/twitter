@@ -39,7 +39,7 @@
     "ember-modal-dialog": "0.7.0",
     "ember-new-computed": "1.0.1",
     "ember-radio-button": "1.0.4",
-    "emberfire": "git+ssh://git@github.com:embersherpa/emberfire.git#70880b0e63aac290fd6495eef659ccc8f9a8c928"
+    "emberfire": "embersherpa/emberfire#70880b0e63aac290fd6495eef659ccc8f9a8c928"
   },
   "dependencies": {
     "ember-truth-helpers": "0.0.5"
