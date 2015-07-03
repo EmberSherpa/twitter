@@ -23,9 +23,9 @@ module('Acceptance | index', {
 test('visiting /', function(assert) {
   storePush(application, {
     data: [
-      {id: 1, type: "tweet", attributes: { tweetText: "First tweet" }},
-      {id: 2, type: "tweet", attributes: { tweetText: "Another great tweet" }},
-      {id: 3, type: "tweet", attributes: { tweetText: "Awesome tweet number 3" }}
+      {id: 1, type: "tweet", attributes: { tweetText: "First tweet", category: "Post", url: "http://localhost:4200/add", user: "@anon", hashtags: "#emberjs" }},
+      {id: 2, type: "tweet", attributes: { tweetText: "Another great tweet", category: "Announcement", url: "http://localhost:4200/add", user: "@anon", hashtags: "#emberjs" }},
+      {id: 3, type: "tweet", attributes: { tweetText: "Awesome tweet number 3",  category: "Addon", url: "http://localhost:4200/add", user: "@anon", hashtags: "#emberjs" }}
     ]
   });
   visit('/');

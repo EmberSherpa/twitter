@@ -1,26 +1,18 @@
-<!-- Fixed navbar -->
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      {{#link-to 'index' class="navbar-brand"}}EmberSherpa Twitter{{/link-to}}
-    </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <li>{{#link-to 'index'}}Home{{/link-to}}</li>
-        <li>{{#link-to 'add'}}Add Tweet{{/link-to}}</li>
-      </ul>
-    </div><!--/.nav-collapse -->
-  </div>
-</nav>
+<div class="navbar-fixed">
+{{#md-navbar name='EmberSherpa Twitter' class='teal lighten-2'}}
+  {{#link-to 'index' tagName='li'}}
+    <a>Home</a>
+    {{/link-to}}
+  {{#link-to 'add' tagName='li'}}
+    <a>Add Tweet</a>
+    {{/link-to}}
+{{/md-navbar}}
+</div>
+
+<br>
 
 <div class="container">
-{{outlet}}
+  {{outlet}}
 </div> <!-- /container -->
 
 {{!-- ember-cli-materialize modal container --}}
