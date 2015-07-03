@@ -1,5 +1,11 @@
 <div class="row">
-  {{tweet-type action="setTweetCategory" categories=model.categories}}
+  {{#tweet-categories
+    categories=model.categories
+    selection=category
+    as |category isSelected|
+    }}
+    <a {{action "selectCategory" category}} class="waves-effect waves-light btn {{if isSelected 'active'}}">{{category}}</a>
+  {{/tweet-categories}}
 </div>
 
 <div class="row">
@@ -21,7 +27,7 @@
   </div>
   <div class="col s6">
     {{#each checkboxes as |hashtag|}}
-    {{tweet-hashtags hashtag=hashtag.content checked=hashtag.checked}}
+      {{tweet-hashtags hashtag=hashtag.content checked=hashtag.checked}}
     {{/each}}
   </div>
 </div>

@@ -32,7 +32,7 @@ export default Ember.Controller.extend({
   }),
 
   actions:{
-    setTweetCategory(category) {
+    selectCategory(category) {
       this.set('category', category);
     },
     saveTweet(){
