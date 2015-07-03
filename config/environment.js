@@ -17,9 +17,6 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
-    sassOptions: {
-      includePaths: ['bower_components/materialize/sass']
-    },
     contentSecurityPolicy: {
       'connect-src': "'self' wss://*.firebaseio.com",
       'default-src': "'none'",
