@@ -1,10 +1,9 @@
-<div>
-  <div class="tweet">
-    <div class="col-md-11">
-      <div>{{tweet.category}}: {{tweet.tweetText}} {{tweet.url}} by {{tweet.user}} {{tweet.hashtags}}</div>
-    </div>
-    <div class="col-md-1">
-      <button type="button" class="btn btn-primary">Approve</button>
-    </div>
-  </div>
-</div>
+{{#md-card class="tweet"}}
+    {{#md-card-content}}
+        {{tweet.category}}: {{tweet.tweetText}} {{tweet.url}} by {{tweet.user}} {{tweet.hashtags}}
+    {{/md-card-content}}
+    {{#md-card-action}}
+        {{#link-to "index"}}Approve{{/link-to}}
+        {{#link-to "index"}}Delete{{/link-to}}
+    {{/md-card-action}}
+{{/md-card}}
