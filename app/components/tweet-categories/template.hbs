@@ -1,3 +1,6 @@
-{{#each categories as |category|}}
-  {{yield category (eq selection category)}}
-{{/each}}
+{{#md-tabs
+  selected=selection}}
+  {{#each categories as |category|}}
+  {{md-tab value=category title=category}}
+  {{/each}}
+{{/md-tabs}}
