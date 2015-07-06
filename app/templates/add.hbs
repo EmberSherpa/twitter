@@ -1,11 +1,8 @@
 <div class="row">
-  {{#tweet-categories
+  {{tweet-categories
     categories=model.categories
     selection=category
-    as |category isSelected|
     }}
-    <a {{action "selectCategory" category}} class="waves-effect waves-light btn {{if isSelected 'active'}}">{{category}}</a>
-  {{/tweet-categories}}
 </div>
 
 <div class="row">
