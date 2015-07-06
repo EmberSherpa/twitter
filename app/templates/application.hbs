@@ -1,11 +1,10 @@
 <div class="navbar-fixed">
 {{#md-navbar name='EmberSherpa Twitter' class='teal lighten-2'}}
-  {{#link-to 'index' tagName='li'}}
-    <a>Home</a>
-    {{/link-to}}
-  {{#link-to 'add' tagName='li'}}
-    <a>Add Tweet</a>
-    {{/link-to}}
+  <li>{{#link-to 'index'}}Home{{/link-to}}</li>
+  <li>{{#link-to 'add'}}Add Tweet{{/link-to}}</li>
+  <li>
+    <a {{action 'signInViaFirebase'}}>Sign in</a>
+  </li>
 {{/md-navbar}}
 </div>
 

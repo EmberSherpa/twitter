@@ -4,7 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'twitter',
     environment: environment,
-    firebase: 'https://torrid-inferno-7507.firebaseio.com/',
+    firebase: 'https://embersherpa-twitter.firebaseio.com',
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
@@ -27,6 +27,13 @@ module.exports = function(environment) {
       'report-uri':"'localhost'",
       'style-src': "'self' 'unsafe-inline'",
       'frame-src': "'none'"
+    },
+    torii: {
+      // a 'session' property will be injected on routes and controllers
+      sessionServiceName: 'session',
+      providers: {
+        firebase: {}
+      }
     }
   };
 
