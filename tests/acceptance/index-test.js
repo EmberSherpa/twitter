@@ -36,5 +36,4 @@ test('visiting /', function(assert) {
     // TWEET Text
     assert.equal($('.tweet').length, 3, "Three tweets are displayed");
   });
-  return pauseTest();
 });
