@@ -1,12 +1,12 @@
 import Ember from 'ember';
 import config from './config/environment';
+import authenticatedRoute from 'torii/routing';
 
 var Router = Ember.Router.extend({
   location: config.locationType
 });
 
-Router.map(function() {
-  this.route('add');
+export default Router.map(function() {
+  authenticatedRoute(this, 'index', {path: '/'});
+  authenticatedRoute(this, 'add');
 });
-
-export default Router;
