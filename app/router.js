@@ -7,6 +7,5 @@ var Router = Ember.Router.extend({
 });
 
 export default Router.map(function() {
-  authenticatedRoute(this, 'index', {path: '/'});
   authenticatedRoute(this, 'add');
 });

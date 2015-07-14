@@ -31,6 +31,7 @@ module.exports = function(environment) {
     torii: {
       // a 'session' property will be injected on routes and controllers
       sessionServiceName: 'session',
+      sessionProvider: 'firebase',
       providers: {
         firebase: {}
       }
