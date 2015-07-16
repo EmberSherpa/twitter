@@ -38,8 +38,8 @@
     "ember-key-responder": "0.2.1",
     "ember-new-computed": "1.0.1",
     "ember-radio-button": "1.0.4",
-    "emberfire": "embersherpa/emberfire#torii-adapter",
-    "torii": "embersherpa/torii#authenticated-route"
+    "emberfire": "embersherpa/emberfire#3cb379c8cab57af52218e6711d287c17321882b3",
+    "torii": "embersherpa/torii#8698ef9763036c29b6d5584ce31a82ef40d4f9f1"
   },
   "dependencies": {
     "ember-truth-helpers": "0.0.5",
