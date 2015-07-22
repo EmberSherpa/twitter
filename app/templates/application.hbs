@@ -1,13 +1,13 @@
 <div class="navbar-fixed">
 {{#md-navbar name='EmberSherpa Twitter' class='teal lighten-2'}}
   <li>{{#link-to 'index'}}Home{{/link-to}}</li>
-  {{#if hasAuth}}
-  <li>{{#link-to 'add'}}Add Tweet{{/link-to}}</li>
-  <li><a {{action 'signOut'}}>Sign Out</a></li>
+  {{#if session.isAuthenticated}}
+    <li>{{#link-to 'add'}}Add Tweet{{/link-to}}</li>
+    <li><a {{action 'signOut'}}>Sign Out</a></li>
   {{else}}
-  <li>
-    <a {{action 'signInViaFirebase'}}>Sign in</a>
-  </li>
+    <li>
+      <a {{action 'signInViaFirebase'}}>Sign in</a>
+    </li>
   {{/if}}
 {{/md-navbar}}
 </div>
