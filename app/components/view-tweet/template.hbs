@@ -3,7 +3,11 @@
         {{tweet.category}}: {{tweet.tweetText}} {{tweet.url}} by {{tweet.user}} {{tweet.hashtags}}
     {{/md-card-content}}
     {{#md-card-action}}
+      {{#if (can "approve tweet")}}
         {{#link-to "index"}}Approve{{/link-to}}
+      {{/if}}
+      {{#if (can "delete tweet")}}
         {{#link-to "index"}}Delete{{/link-to}}
+      {{/if}}
     {{/md-card-action}}
 {{/md-card}}

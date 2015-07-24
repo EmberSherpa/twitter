@@ -41,7 +41,8 @@ export default Ember.Controller.extend({
         user: this.get('user'),
         tweetText: this.get('tweetText'),
         url: this.get('url'),
-        hashtags: this.get('hashtags')
+        hashtags: this.get('hashtags'),
+        postedBy: this.get('session.currentUser.username')
       });
       newTweet.save();
       this.setProperties({

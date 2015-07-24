@@ -8,4 +8,5 @@ var Router = Ember.Router.extend({
 
 export default Router.map(function() {
   authenticatedRoute(this, 'add');
+  authenticatedRoute(this, 'users');
 });

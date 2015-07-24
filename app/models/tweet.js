@@ -5,5 +5,6 @@ export default DS.Model.extend({
   user: DS.attr('string'),
   tweetText: DS.attr('string'),
   url: DS.attr('string'),
-  hashtags: DS.attr('string')
+  hashtags: DS.attr('string'),
+  postedBy: DS.attr('string')
 });

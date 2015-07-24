@@ -1,0 +1,19 @@
+{{add-username label="Username" value=username}}
+
+<div class="row">
+  <div class="col s6">
+    Select User Role:
+  </div>
+  <div class="col s6">
+    {{#each checkboxes as |role|}}
+      {{tweet-hashtags hashtag=role.content checked=role.checked}}
+    {{/each}}
+  </div>
+</div>
+
+<div class="row">
+  {{md-btn-submit icon='mdi-content-send'
+  iconPosition='right'
+  text='Save'
+  action='saveUser'}}
+</div>
