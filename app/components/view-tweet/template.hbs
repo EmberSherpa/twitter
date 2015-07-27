@@ -3,8 +3,8 @@
         {{tweet.category}}: {{tweet.tweetText}} {{tweet.url}} by {{tweet.user}} {{tweet.hashtags}}
     {{/md-card-content}}
     {{#md-card-action}}
-      {{#if (can "approve tweet")}}
-        <a {{action "approveTweet" tweet}}>Delete</a>
+      {{#if (can "approve tweet" tweet)}}
+        <a {{action "approveTweet" tweet}}>Approve</a>
       {{/if}}
       {{#if (can "delete tweet" tweet)}}
         <a {{action "deleteTweet" tweet}}>Delete</a>

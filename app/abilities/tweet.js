@@ -1,21 +1,25 @@
 import Ember from 'ember';
 import { Ability } from 'ember-can';
 
-export default Ability.extend({
-  user: Ember.inject.service(),
+const {get} = Ember;
 
-  canDelete: Ember.computed("session.currentUser.username", "model.postedBy", "user", {
-    get() {
-      if(this.get('user.role') === 'admin'){
-        return true;
-      }else{
-        return this.get('session.currentUser.username') === this.get('model.postedBy');
+export default Ability.extend({
+  "current-user": Ember.inject.service(),
+  canDelete: Ember.computed(
+    "current-user.role",
+    "model.postedBy", {
+      get() {
+        const currentUser = this.get('current-user');
+        if (get(currentUser, 'role') === 'admin'){
+          return true;
+        } else {
+          return get(currentUser, 'username') === this.get('model.postedBy');
+        }
       }
-    }
   }),
-  canApprove: Ember.computed("user", {
+  canApprove: Ember.computed("current-user.role", {
     get() {
-      return this.get("user.role") === 'admin';
+      return this.get("current-user.role") === 'admin';
     }
   })
 });
