@@ -4,10 +4,10 @@
     {{/md-card-content}}
     {{#md-card-action}}
       {{#if (can "approve tweet")}}
-        {{#link-to "index"}}Approve{{/link-to}}
+        <a {{action "approveTweet" tweet}}>Delete</a>
       {{/if}}
-      {{#if (can "delete tweet")}}
-        {{#link-to "index"}}Delete{{/link-to}}
+      {{#if (can "delete tweet" tweet)}}
+        <a {{action "deleteTweet" tweet}}>Delete</a>
       {{/if}}
     {{/md-card-action}}
 {{/md-card}}

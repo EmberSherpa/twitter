@@ -4,7 +4,7 @@ export function initialize(/* container, application */) {
 
 export default {
   name: 'inject-session-into-abilities',
-    initialize(container, application) {
+    initialize(container) {
       container.injection('ability', 'session', 'torii:session');
     }
 };
