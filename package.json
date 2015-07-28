@@ -40,7 +40,7 @@
     "ember-new-computed": "1.0.1",
     "ember-radio-button": "1.0.4",
     "emberfire": "firebase/emberfire#e1a39907eb322e8d17e1aea947590bc522846321",
-    "torii": "embersherpa/torii#authenticated-route"
+    "torii": "embersherpa/torii#ee670cd525dd4368c2dc324ac5eab286b146c909"
   },
   "dependencies": {
     "ember-truth-helpers": "0.0.5",
