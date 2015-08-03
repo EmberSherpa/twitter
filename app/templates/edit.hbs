@@ -1,0 +1,41 @@
+<div class="row">
+  {{tweet-categories
+    categories=model.categories
+    selection=category
+    }}
+</div>
+
+<div class="row">
+  {{tweet-input value=tweetText label="Tweet Text"}}
+</div>
+
+<div class="row">
+  <div class="col s6">
+    {{twitter-user value=user}}
+  </div>
+  <div class="col s6">
+    {{tweet-link value=url}}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col s6">
+    Select Hashtags:
+  </div>
+  <div class="col s6">
+    {{#each checkboxes as |hashtag|}}
+      {{tweet-hashtags hashtag=hashtag.content checked=hashtag.checked}}
+    {{/each}}
+  </div>
+</div>
+
+<div class="row">
+  {{tweet-input value=preview}}
+</div>
+
+<div class="row">
+  {{md-btn-submit icon='mdi-content-send'
+  iconPosition='right'
+  text='Save'
+  action='saveTweet'}}
+</div>
