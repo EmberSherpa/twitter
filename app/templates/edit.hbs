@@ -1,20 +1,20 @@
 <div class="row">
   {{tweet-categories
-    categories=model.categories
-    selection=category
+    categories=categories
+    selection=categoryComp
     }}
 </div>
 
 <div class="row">
-  {{tweet-input value=tweetText label="Tweet Text"}}
+  {{tweet-input value=model.tweetText label="Tweet Text"}}
 </div>
 
 <div class="row">
   <div class="col s6">
-    {{twitter-user value=user}}
+    {{twitter-user value=model.user}}
   </div>
   <div class="col s6">
-    {{tweet-link value=url}}
+    {{tweet-link value=model.url}}
   </div>
 </div>
 
@@ -38,4 +38,7 @@
   iconPosition='right'
   text='Save'
   action='saveTweet'}}
+  {{md-btn-submit
+  text='Cancel'
+  action='cancelEditing'}}
 </div>

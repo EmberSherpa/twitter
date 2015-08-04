@@ -11,9 +11,6 @@ export default Ember.Component.extend({
       var tweet = this.get('tweet');
       tweet.deleteRecord();
       tweet.save()
-    },
-    editTweet(tweet){
-      this.sendAction('edit', tweet);
     }
   }
 });

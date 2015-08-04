@@ -14,7 +14,7 @@
         <a {{action "deleteTweet" tweet}}>Delete</a>
       {{/if}}
       {{#if (can "edit tweet" tweet)}}
-        {{#link-to 'edit' tweet.id}}Edit{{/link-to}}
+        {{#link-to 'edit' tweet}}Edit{{/link-to}}
       {{/if}}
       {{#if tweet.approved}}
         <small>Status: Approved</small>
