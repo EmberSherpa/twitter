@@ -4,10 +4,22 @@
     {{/md-card-content}}
     {{#md-card-action}}
       {{#if (can "approve tweet" tweet)}}
-        <a {{action "approveTweet" tweet}}>Approve</a>
+        {{#if tweet.approved}}
+          <a {{action "approveTweet" tweet}}>Reject</a>
+          {{else}}
+          <a {{action "approveTweet" tweet}}>Approve</a>
+        {{/if}}
       {{/if}}
       {{#if (can "delete tweet" tweet)}}
         <a {{action "deleteTweet" tweet}}>Delete</a>
+      {{/if}}
+      {{#if (can "edit tweet" tweet)}}
+        {{#link-to 'edit' tweet}}Edit{{/link-to}}
+      {{/if}}
+      {{#if tweet.approved}}
+        <small>Status: Approved</small>
+      {{else}}
+        <small>Status: Pending</small>
       {{/if}}
     {{/md-card-action}}
 {{/md-card}}

@@ -6,5 +6,6 @@ export default DS.Model.extend({
   tweetText: DS.attr('string'),
   url: DS.attr('string'),
   hashtags: DS.attr('string'),
-  postedBy: DS.attr('string')
+  postedBy: DS.attr('string'),
+  approved: DS.attr('boolean', {defaultValue: false})
 });

@@ -8,4 +8,5 @@ var Router = Ember.Router.extend({
 export default Router.map(function() {
   this.authenticatedRoute('add');
   this.authenticatedRoute('users');
+  this.authenticatedRoute('edit', { path: '/:tweet_id/edit' });
 });

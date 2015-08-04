@@ -1,3 +1,6 @@
 {{#each model as |tweet|}}
-  {{view-tweet tweet=tweet}}
+  {{view-tweet tweet=tweet
+    approve="approveTweet"
+    edit="editTweet"
+    param=tweet}}
 {{/each}}
